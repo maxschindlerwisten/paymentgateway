@@ -1,0 +1,30 @@
+{
+  "name": "csob-framer-netlify-integration",
+  "version": "1.0.0",
+  "description": "CSOB Payment Gateway integration for Framer sites deployed on Netlify",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "echo 'No build required for serverless functions'",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "node-rsa": "^1.1.1",
+    "airtable": "^0.12.2",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "@netlify/functions": "^2.4.0"
+  },
+  "keywords": [
+    "csob",
+    "payment-gateway",
+    "framer",
+    "netlify",
+    "serverless",
+    "e-commerce"
+  ],
+  "author": "Go-Fresh E-commerce",
+  "license": "MIT"
+}

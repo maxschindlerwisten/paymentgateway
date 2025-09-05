@@ -1,0 +1,378 @@
+/* Go-Fresh Payment Integration Styles */
+
+/* Message notifications */
+.payment-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  z-index: 10000;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+.payment-message.success {
+  background-color: #10b981;
+}
+
+.payment-message.error {
+  background-color: #ef4444;
+}
+
+.payment-message.warning {
+  background-color: #f59e0b;
+}
+
+.payment-message.info {
+  background-color: #3b82f6;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Cart styles */
+.cart-counter {
+  background-color: #ef4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 18px;
+  text-align: center;
+  display: inline-block;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #059669;
+}
+
+.cart-items-list {
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9fafb;
+}
+
+.cart-item .item-info {
+  flex: 2;
+}
+
+.cart-item .item-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #111827;
+}
+
+.cart-item .item-description {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.cart-item .item-price {
+  margin: 0;
+  font-weight: bold;
+  color: #059669;
+}
+
+.cart-item .item-controls {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cart-quantity-input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cart-item .item-total {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  color: #059669;
+}
+
+.empty-cart {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 40px 20px;
+}
+
+/* Button styles */
+.add-to-cart-btn,
+.remove-from-cart-btn,
+.checkout-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.add-to-cart-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #059669;
+}
+
+.add-to-cart-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.remove-from-cart-btn {
+  background-color: #ef4444;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: #dc2626;
+}
+
+.checkout-btn {
+  background-color: #3b82f6;
+  color: white;
+  font-size: 16px;
+  padding: 15px 30px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.checkout-btn:hover {
+  background-color: #2563eb;
+}
+
+.checkout-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Customer form styles */
+.customer-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+}
+
+.customer-form h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.customer-form .form-group {
+  margin-bottom: 15px;
+}
+
+.customer-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #374151;
+}
+
+.customer-form input[type="text"],
+.customer-form input[type="email"],
+.customer-form input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.customer-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.customer-form .required {
+  color: #ef4444;
+}
+
+/* Payment result pages */
+.payment-result-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.payment-success,
+.payment-error {
+  text-align: center;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.payment-success {
+  border: 3px solid #10b981;
+  background-color: #f0fdf4;
+}
+
+.payment-error {
+  border: 3px solid #ef4444;
+  background-color: #fef2f2;
+}
+
+.payment-success h2 {
+  color: #059669;
+  margin-bottom: 20px;
+}
+
+.payment-error h2 {
+  color: #dc2626;
+  margin-bottom: 20px;
+}
+
+.payment-success p,
+.payment-error p {
+  margin-bottom: 15px;
+  color: #374151;
+}
+
+.payment-success button,
+.payment-error button {
+  margin: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.payment-success button {
+  background-color: #10b981;
+  color: white;
+}
+
+.payment-success button:hover {
+  background-color: #059669;
+}
+
+.payment-error button {
+  background-color: #6b7280;
+  color: white;
+}
+
+.payment-error button:hover {
+  background-color: #4b5563;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cart-item {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .cart-item .item-controls {
+    justify-content: center;
+  }
+  
+  .cart-item .item-total {
+    text-align: center;
+  }
+  
+  .payment-message {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
+  
+  .customer-form {
+    margin: 10px;
+    max-width: none;
+  }
+  
+  .payment-result-container {
+    padding: 10px;
+  }
+  
+  .payment-success,
+  .payment-error {
+    padding: 20px;
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
