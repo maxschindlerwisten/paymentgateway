@@ -1,1 +1,6 @@
 .DS_Store
+vendor/
+node_modules/
+.env
+*.log
+go-fresh-backend/config/.env*
