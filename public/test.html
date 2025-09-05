@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Fresh Payment Integration - Test Page</title>
+    <link rel="stylesheet" href="gofresh-payment.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Go-Fresh E-commerce</h1>
+            <div class="cart-summary">
+                Cart (<span class="cart-counter">0</span>) - <span class="cart-total">0.00 CZK</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="products">
+                <h2>Our Products</h2>
+                
+                <div class="product">
+                    <h3>Fresh Apples</h3>
+                    <p>Delicious red apples from local farms</p>
+                    <p class="price">25.99 CZK</p>
+                    <button class="add-to-cart-btn"
+                            data-product-id="rec123ABC"
+                            data-product-name="Fresh Apples"
+                            data-product-price="25.99"
+                            data-product-description="Delicious red apples from local farms">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="product">
+                    <h3>Organic Bananas</h3>
+                    <p>Premium organic bananas</p>
+                    <p class="price">18.50 CZK</p>
+                    <button class="add-to-cart-btn"
+                            data-product-id="rec456DEF"
+                            data-product-name="Organic Bananas"
+                            data-product-price="18.50"
+                            data-product-description="Premium organic bananas">
+                        Add to Cart
+                    </button>
+                </div>
+
+                <div class="product">
+                    <h3>Fresh Bread</h3>
+                    <p>Daily baked fresh bread</p>
+                    <p class="price">45.00 CZK</p>
+                    <button class="add-to-cart-btn"
+                            data-product-id="rec789GHI"
+                            data-product-name="Fresh Bread"
+                            data-product-price="45.00"
+                            data-product-description="Daily baked fresh bread">
+                        Add to Cart
+                    </button>
+                </div>
+            </section>
+
+            <section class="cart-section">
+                <h2>Your Cart</h2>
+                <div class="cart-items-list"></div>
+                
+                <form class="customer-form">
+                    <h3>Customer Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" name="phone" id="phone">
+                    </div>
+                    
+                    <button type="button" class="checkout-btn">Proceed to Payment</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="gofresh-payment.js"></script>
+    <script>
+        // Configuration for testing
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.goFreshPayment) {
+                // Update these URLs for your actual deployment
+                window.goFreshPayment.apiBaseUrl = 'https://your-netlify-site.netlify.app/.netlify/functions';
+                window.goFreshPayment.siteUrl = 'https://your-framer-site.framer.website';
+                
+                console.log('Go-Fresh Payment Integration configured for testing');
+            }
+        });
+    </script>
+
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e5e7eb;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f9fafb;
+        }
+
+        .product h3 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .product .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #059669;
+            margin: 15px 0;
+        }
+
+        .cart-section {
+            background-color: #f3f4f6;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>
